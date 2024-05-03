@@ -1,15 +1,14 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.webdriver import WebDriver
-from time import sleep
 
 from pages.base_page import BasePage
 
-language_button = (By.ID, 'toggle-menu')
-russian_button = (By.XPATH, 'ru-RU')
-login_button = (By.ID, 'js-c-internal-links__login')
-username_field = (By.XPATH, 'username')
-password_field = (By.XPATH, 'password')
-login_button_2 = (By.XPATH, 'Войти')
+agree_button = (By.ID, 'didomi-notice-agree-button')
+language_button = (By.XPATH, '//button[@class="c-menu-language__btn u-cursor-pointer u-text-weight-bold js-menu-language__btn"]')
+russian_button = (By.XPATH, '//a[@lang="ru-RU"]')
+login_button = (By.ID, 'adb-header-login')
+username_field = (By.ID, 'gigya-loginID-83718878221439220')
+password_field = (By.ID, 'gigya-password-124357688285627710')
+auth_button = (By.XPATH, '//*[@id="gigya-login-form"]/div[2]/div[1]/div[5]/input')
 
 
 class AuthorizationPage(BasePage):
@@ -18,57 +17,20 @@ class AuthorizationPage(BasePage):
 
     def open(self):
         self.browser.get('https://www.euronews.com/')
+    
+    def authentication_test(self):
+        self.open()
+        self.find(agree_button).click()
+        self.find(language_button).click()
+        self.find(russian_button).click()
+        self.find(agree_button).click()
+        self.find(login_button).click()
 
-    def language_button(self):
-        return self.find(language_button)
+        username = self.find(username_field)
+        username.click()
+        username.send_keys('lipofo4377@eryod.com')
+        password = self.find(password_field)
+        password.click()
+        password.send_keys('Aa12345?')
 
-    def language_button_click(self):
-        return self.language_button().click()
-
-    def russian_button(self):
-        return self.find(russian_button)
-
-    def russian_button_click(self):
-        return self.russian_button().click()
-
-    def login_button(self):
-        return self.find(login_button)
-
-    def login_button_click(self):
-        return self.login_button().click()
-
-    def username(self):
-        return self.find(username_field)
-
-    def username_click(self):
-        return self.username().click()
-
-    def username_send(self):
-        return self.username().send_keys('lipofo4377@eryod.com')
-
-    def password(self):
-        return self.find(username_field)
-
-    def password_click(self):
-        return self.password().click
-
-    def password_send(self):
-        return self.password().send_keys('Aa12345?')
-
-    def login_button_2(self):
-        return self.find(login_button_2)
-
-    def login_button_2_click(self):
-        return self.login_button_2().click()
-
-
-
-
-
-
-
-
-
-
-
-
+        self.find(auth_button).click()
