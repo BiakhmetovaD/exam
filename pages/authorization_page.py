@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-agree_button = (By.ID, 'didomi-notice-agree-button')
 language_button = (By.XPATH, '//button[@class="c-menu-language__btn u-cursor-pointer u-text-weight-bold js-menu-language__btn"]')
 russian_button = (By.XPATH, '//a[@lang="ru-RU"]')
 login_button = (By.ID, 'adb-header-login')
@@ -12,18 +11,15 @@ auth_button = (By.XPATH, '//*[@id="gigya-login-form"]/div[2]/div[1]/div[5]/input
 
 
 class AuthorizationPage(BasePage):
-    def __init__(self, browser):
-        super().__init__(browser)
-
-    def open(self):
+    def home_page(self):
         self.browser.get('https://www.euronews.com/')
-    
-    def authentication_test(self):
-        self.open()
-        self.find(agree_button).click()
+
+    def authenticate(self):
+        self.home_page()
+        self.agree()
         self.find(language_button).click()
         self.find(russian_button).click()
-        self.find(agree_button).click()
+        self.agree()
         self.find(login_button).click()
 
         username = self.find(username_field)

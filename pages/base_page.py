@@ -1,9 +1,18 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.common.by import By
+
+agree_button = (By.ID, 'didomi-notice-agree-button')
 
 
 class BasePage:
     def __init__(self, browser: WebDriver):
         self.browser = browser
+
+    def ru_page(self):
+        self.browser.get('https://ru.euronews.com/')
+
+    def agree(self):
+        self.find(agree_button).click()
 
     def find(self, args):
         self.sleep()
