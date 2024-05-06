@@ -12,8 +12,6 @@ class SearchPage(BasePage):
     def search(self):
         self.ru_page()
         self.agree()
-
-    def search_func(self):
         self.send_keys(search_field, 'Казахстан')
         self.find(search_button).click()
         self.browser.execute_script("arguments[0].scrollIntoView(true);", news)
