@@ -22,10 +22,11 @@ class BasePage:
         self.sleep()
         return self.browser.find_elements(*args)
 
-    def send_keys(self, field, keys):
-        field_element = self.find(field)
-        field_element.click()
-        field_element.send_keys(keys)
+    def send_keys(self, input_field, keys):
+        field = self.find(input_field)
+        field.clear()
+        field.click()
+        field.send_keys(keys)
 
     def sleep(self):
         self.browser.implicitly_wait(10)

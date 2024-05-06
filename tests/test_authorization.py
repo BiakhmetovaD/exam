@@ -14,4 +14,5 @@ def test_form_fill(browser):
 def test_search(browser):
     search_page = SearchPage(browser)
     search_page.search()
-    sleep(3)
+    search_page.search_func()
+    sleep(5)

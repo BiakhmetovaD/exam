@@ -18,16 +18,10 @@ update_button = (By.XPATH, '//*[@id="gigya-profile-form"]/div[9]/div[6]/input')
 
 class FormPage(AuthorizationPage):
     def fill_form(self):
-        first_name = self.find(fist_name_field)
-        first_name.clear()
-        first_name.click()
-        first_name.send_keys('Test')
+        self.send_keys(fist_name_field, 'First Name Test')
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-        last_name = self.find(last_name_field)
-        last_name.clear()
-        last_name.click()
-        last_name.send_keys('Test')
+        self.send_keys(last_name_field, 'Last Name Test')
 
         self.change_gender()
         self.set_birth_date()
@@ -45,8 +39,6 @@ class FormPage(AuthorizationPage):
             man.click()
 
     def set_birth_date(self):
-        birth_date = self.find(birth_date_field)
-        birth_date.click()
         day = random.randrange(1, 28)
         month = random.randrange(1, 12)
         year = random.randrange(1990, 2015)
@@ -54,7 +46,7 @@ class FormPage(AuthorizationPage):
             day = '0' + str(day)
         if month < 10:
             month = '0' + str(month)
-        birth_date.send_keys(f'{month}/{day}/{year}')
+        self.send_keys(birth_date_field, f'{month}/{day}/{year}')
 
     def set_country(self):
         self.find(country_field).click()
