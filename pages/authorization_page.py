@@ -22,11 +22,7 @@ class AuthorizationPage(BasePage):
         self.agree()
         self.find(login_button).click()
 
-        username = self.find(username_field)
-        username.click()
-        username.send_keys('lipofo4377@eryod.com')
-        password = self.find(password_field)
-        password.click()
-        password.send_keys('Aa12345?')
+        self.send_keys(username_field, 'lipofo4377@eryod.com')
+        self.send_keys(password_field, 'Aa12345?')
 
         self.find(auth_button).click()
