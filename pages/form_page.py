@@ -18,6 +18,7 @@ update_button = (By.XPATH, '//*[@id="gigya-profile-form"]/div[9]/div[6]/input')
 
 class FormPage(AuthorizationPage):
     def fill_form(self):
+        self.authenticate()
         self.send_keys(fist_name_field, 'First Name Test')
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 

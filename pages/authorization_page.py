@@ -26,3 +26,4 @@ class AuthorizationPage(BasePage):
         self.send_keys(password_field, 'Aa12345?')
 
         self.find(auth_button).click()
+        self.find((By.ID, 'gigya-textbox-firstName'))

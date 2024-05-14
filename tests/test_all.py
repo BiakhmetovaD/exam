@@ -7,7 +7,6 @@ from pages.newsletters_page import NewslettersPage
 
 def test_form_fill(browser):
     form_page = FormPage(browser)
-    form_page.authenticate()
     form_page.fill_form()
     sleep(3)
 
