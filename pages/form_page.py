@@ -30,6 +30,9 @@ class FormPage(AuthorizationPage):
         sleep(3)
         self.find(update_button).click()
 
+        # request_accepted_button = self.find(By.XPATH, '//*[@id="gigya-profile-form"]/div[9]/div[6]/span')
+        # assert request_accepted_button == 'Ваш запрос принят'
+
     def change_gender(self):
         woman = self.find(woman_button)
         woman_class = woman.get_attribute('class')

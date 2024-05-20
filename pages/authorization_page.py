@@ -27,3 +27,4 @@ class AuthorizationPage(BasePage):
 
         self.find(auth_button).click()
         self.find((By.ID, 'gigya-textbox-firstName'))
+
