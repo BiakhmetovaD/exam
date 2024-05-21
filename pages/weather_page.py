@@ -30,5 +30,3 @@ class WeatherPage(BasePage):
         weather_dropdown = self.find((By.ID, 'js-show-my-weather'))
         assert weather_dropdown.is_displayed()
 
-
-
