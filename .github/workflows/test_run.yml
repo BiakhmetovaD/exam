@@ -1,0 +1,62 @@
+name: Automation test
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default:
+        type: choice
+        options:
+          - first_test
+          - second_test
+          - third_test
+          - fourth_test
+          - fifth_test
+          - sixth_test
+          - seventh_test
+          - eighth_test
+          - ninth_test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install Chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: install dependencies
+        run: pip install -r requirements.txt
+      - name: first_test
+        if: "github.event.inputs.deployment_target == 'first_test'"
+        run: pytest tests/test_authorization.py::test_authorization
+      - name: second_test
+        if: "github.event.inputs.deployment_target == 'second_test'"
+        run: pytest tests/test_bulletin.py::test_bulletin
+      - name: third_test
+        if: "github.event.inputs.deployment_target == 'third_test'"
+        run: pytest tests/test_form_fill.py::test_form_fill
+      - name: fourth_test
+        if: "github.event.inputs.deployment_target == 'fourth_test'"
+        run: pytest tests/test_just_in.py::test_just_in
+      - name: fifth_test
+        if: "github.event.inputs.deployment_target == 'fifth_test'"
+        run: pytest tests/test_live.py::test_live
+      - name: sixth_test
+          if: "github.event.inputs.deployment_target == 'sixth_test'"
+          run: pytest tests/test_test_newsletters.py::test_newsletters
+      - name: seventh_test
+          if: "github.event.inputs.deployment_target == 'seventh_test'"
+          run: pytest tests/test_programmes.py::test_programmes
+      - name: eighth_test
+          if: "github.event.inputs.deployment_target == 'eighth_test'"
+          run: pytest tests/test_search.py::test_search
+      - name: ninth_test
+          if: "github.event.inputs.deployment_target == 'ninth_test'"
+          run: pytest tests/test_weather.py::test_weather

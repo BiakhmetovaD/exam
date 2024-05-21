@@ -2,9 +2,9 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-programmes_menu = (By.XPATH, '//*[@id="js-header"]/header/section/nav/ul/li[3]/a/span')
-all_programm_button = (By.XPATH, '//*[@id="js-header"]/header/section/nav/div/div[7]/a')
-dubai_button = (By.XPATH, '//*[@id="abe-2167506-title-pos1-c_program_card-"]/a')
+programmes_menu = (By.XPATH, '//li[@class="js-programs_links list-item list-item--programs"]')
+all_programm_button = (By.XPATH, '//a[@class="c-link-chevron u-text-weight-bold u-text-transform-uppercase "]')
+dubai_button = (By.XPATH, '//a[@class="m-object__title__link   "]')
 
 
 class ProgrammesPage(BasePage):
@@ -14,6 +14,6 @@ class ProgrammesPage(BasePage):
         self.find(programmes_menu).click()
         self.find(all_programm_button).click()
         self.find(dubai_button).click()
-        image = self.find((By.XPATH, '//*[@id="js-article-header-pc"]/a/img'))
+        image = self.find((By.XPATH, '//img[@class="c-article-pc-disclaimer__partner__img"]'))
         assert image.is_displayed()
 

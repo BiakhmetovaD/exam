@@ -7,7 +7,7 @@ russian_button = (By.XPATH, '//a[@lang="ru-RU"]')
 login_button = (By.ID, 'adb-header-login')
 username_field = (By.ID, 'gigya-loginID-83718878221439220')
 password_field = (By.ID, 'gigya-password-124357688285627710')
-auth_button = (By.XPATH, '//*[@id="gigya-login-form"]/div[2]/div[1]/div[5]/input')
+auth_button = (By.XPATH, '//input[@value="Войти"]')
 
 
 class AuthorizationPage(BasePage):

@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-bulletin_button = (By.XPATH, '//*[@id="js-header"]/header/section/nav/ul/li[6]/a')
+bulletin_button = (By.XPATH, '//a[@title="Выпуск новостей"]')
 
 
 class BulletinPage(BasePage):
@@ -10,5 +10,5 @@ class BulletinPage(BasePage):
         self.ru_page()
         self.agree()
         self.find(bulletin_button).click()
-        trend_button = self.find((By.XPATH, '//*[@id="enw-main-content"]/section[2]/ul/li[1]/strong'))
+        trend_button = self.find((By.XPATH, '//span[@class="c-barre-now__dot u-padding-start-2"]'))
         assert trend_button.is_displayed()

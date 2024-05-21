@@ -13,7 +13,7 @@ man_button = (By.ID, 'gigya-multiChoice-1-107849046191306260')
 birth_date_field = (By.ID, 'gigya-textbox-51199175038457890')
 country_field = (By.ID, 'gigya-textbox-country')
 country_random = (By.XPATH, f'//*[@id="gigya-textbox-country"]/option[{random.randrange(1,244)}]')
-update_button = (By.XPATH, '//*[@id="gigya-profile-form"]/div[9]/div[6]/input')
+update_button = (By.XPATH, '//input[@value="Обновить профиль"]')
 
 
 class FormPage(AuthorizationPage):

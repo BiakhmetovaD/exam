@@ -3,9 +3,8 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 
-search_field = (By.XPATH, '//*[@id="search-autocomplete"]/div[1]/div/input')
-search_button = (By.XPATH, '//*[@id="search-autocomplete"]/button')
-news = (By.XPATH, '//*[@id="abe-2519066-title-pos5-listing_library"]/a')
+search_field = (By.XPATH, '//input[@class="c-search-form__input awesomplete"]')
+search_button = (By.XPATH, '//button[@class="c-search-form__button"]')
 
 
 class SearchPage(BasePage):

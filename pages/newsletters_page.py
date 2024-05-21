@@ -2,12 +2,12 @@ from selenium.webdriver.common.by import By
 
 from pages.authorization_page import AuthorizationPage
 
-newsletters_button = (By.XPATH, '//*[@id="js-header"]/header/div[1]/ul/li[2]/a/span')
-choose_button = (By.XPATH, '//*[@id="newsletters-form"]/div/div[1]/div/div[2]/label[1]')
-email_field = (By.XPATH, '//*[@id="register-newsletters-form"]/div[1]/input')
-continue_button = (By.XPATH, '//*[@id="register-newsletters-form"]/div[2]/input')
+newsletters_button = (By.XPATH, '//span[@data-event="newsletter-link-header"]')
+choose_button = (By.XPATH, '//label[@class="block w-full btn-tertiary unchecked-label cursor-pointer"]')
+email_field = (By.XPATH, '//input[@class="w-full"]')
+continue_button = (By.XPATH, '//input[@class="btn-primary mt-6 md:mt-0 cursor-pointer block w-full md:inline-block"]')
 checkbox = (By.ID, 'subs-checkbox-travel_en')
-update_button = (By.XPATH, '//*[@id="gigya-profile-form"]/div[6]/div[61]/input')
+update_button = (By.XPATH, '//input[@value="Обновить мои рассылки"]')
 
 
 class NewslettersPage(AuthorizationPage):

@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-weather_button = (By.XPATH, '//*[@id="js-header"]/header/section/nav/ul/li[4]/a')
-city_field = (By.XPATH, '//*[@id="weather-search-addtomyweather"]/div[1]/div/input')
-search_button = (By.XPATH, '//*[@id="weather-search-addtomyweather"]/button')
-fahrenheit_button = (By.XPATH, '//*[@id="js-degree-selector"]/label/div[2]')
+weather_button = (By.XPATH, '//li[@class="c-menu-icons"]')
+city_field = (By.XPATH, '//input[@data-apiurl="/api/weather/search?query="]')
+search_button = (By.XPATH, '//div[@id="weather-search-addtomyweather"]/child::button[@class="c-search-form__button"]')
+fahrenheit_button = (By.XPATH, '//div[@class="c-search__switch__label c-search__switch__label--degree-f js-degree js-degree-f"]')
 your_cities_button = (By.ID, 'js-add-to-my-weather')
 my_weather_dropdown = (By.ID, 'js-show-my-weather')
 
