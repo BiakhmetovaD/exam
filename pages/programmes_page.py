@@ -14,4 +14,6 @@ class ProgrammesPage(BasePage):
         self.find(programmes_menu).click()
         self.find(all_programm_button).click()
         self.find(dubai_button).click()
+        image = self.find((By.XPATH, '//*[@id="js-article-header-pc"]/a/img'))
+        assert image.is_displayed()
 

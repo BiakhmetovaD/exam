@@ -6,8 +6,8 @@ weather_button = (By.XPATH, '//*[@id="js-header"]/header/section/nav/ul/li[4]/a'
 city_field = (By.XPATH, '//*[@id="weather-search-addtomyweather"]/div[1]/div/input')
 search_button = (By.XPATH, '//*[@id="weather-search-addtomyweather"]/button')
 fahrenheit_button = (By.XPATH, '//*[@id="js-degree-selector"]/label/div[2]')
-your_cities_button = (By.XPATH, '//*[@id="js-add-to-my-weather"]')
-my_weather_dropdown = (By.XPATH, '//*[@id="js-show-my-weather"]')
+your_cities_button = (By.ID, 'js-add-to-my-weather')
+my_weather_dropdown = (By.ID, 'js-show-my-weather')
 
 
 class WeatherPage(BasePage):
@@ -27,6 +27,8 @@ class WeatherPage(BasePage):
 
     def my_weather(self):
         self.find(my_weather_dropdown).click()
+        weather_dropdown = self.find((By.ID, 'js-show-my-weather'))
+        assert weather_dropdown.is_displayed()
 
 
 

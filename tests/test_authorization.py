@@ -9,7 +9,7 @@ def test_authorization(browser):
     authorization_page = AuthorizationPage(browser)
     with allure.step('Open browser and go to site'):
         authorization_page.home_page()
-    with allure.step('Authenticate '):
+    with allure.step('Authenticate'):
         authorization_page.authenticate()
 
 

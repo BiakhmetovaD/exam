@@ -29,9 +29,8 @@ class FormPage(AuthorizationPage):
         self.set_country()
         sleep(3)
         self.find(update_button).click()
-
-        # request_accepted_button = self.find(By.XPATH, '//*[@id="gigya-profile-form"]/div[9]/div[6]/span')
-        # assert request_accepted_button == 'Ваш запрос принят'
+        image = self.find((By.ID, 'gigya-profile-form'))
+        assert image.is_displayed()
 
     def change_gender(self):
         woman = self.find(woman_button)
@@ -45,7 +44,7 @@ class FormPage(AuthorizationPage):
     def set_birth_date(self):
         day = random.randrange(1, 28)
         month = random.randrange(1, 12)
-        year = random.randrange(1990, 2015)
+        year = random.randrange(1980, 2015)
         if day < 10:
             day = '0' + str(day)
         if month < 10:

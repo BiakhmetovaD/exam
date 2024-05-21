@@ -10,5 +10,6 @@ class JustInPage(BasePage):
         self.ru_page()
         self.agree()
         self.find(just_in_button).click()
-        # assert "Лента срочных сообщений" ==
+        trend_button = self.find((By.XPATH, '//*[@id="enw-main-content"]/section[1]/ul/li[1]/strong'))
+        assert trend_button.is_displayed()
 

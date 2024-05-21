@@ -14,7 +14,8 @@ class SearchPage(BasePage):
         self.agree()
         self.send_keys(search_field, 'Казахстан')
         self.find(search_button).click()
-        self.browser.execute_script("arguments[0].scrollIntoView(true);", news)
+        search = self.find((By.ID, 'listing-search-autocomplete'))
+        assert search.is_displayed()
 
 
 
