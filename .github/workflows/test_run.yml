@@ -49,14 +49,14 @@ jobs:
         if: "github.event.inputs.deployment_target == 'fifth_test'"
         run: pytest tests/test_live.py::test_live
       - name: sixth_test
-          if: "github.event.inputs.deployment_target == 'sixth_test'"
-          run: pytest tests/test_test_newsletters.py::test_newsletters
+        if: "github.event.inputs.deployment_target == 'sixth_test'"
+        run: pytest tests/test_test_newsletters.py::test_newsletters
       - name: seventh_test
-          if: "github.event.inputs.deployment_target == 'seventh_test'"
-          run: pytest tests/test_programmes.py::test_programmes
+        if: "github.event.inputs.deployment_target == 'seventh_test'"
+        run: pytest tests/test_programmes.py::test_programmes
       - name: eighth_test
-          if: "github.event.inputs.deployment_target == 'eighth_test'"
-          run: pytest tests/test_search.py::test_search
+        if: "github.event.inputs.deployment_target == 'eighth_test'"
+        run: pytest tests/test_search.py::test_search
       - name: ninth_test
-          if: "github.event.inputs.deployment_target == 'ninth_test'"
-          run: pytest tests/test_weather.py::test_weather
+        if: "github.event.inputs.deployment_target == 'ninth_test'"
+        run: pytest tests/test_weather.py::test_weather
