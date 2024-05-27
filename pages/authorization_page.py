@@ -18,11 +18,9 @@ class AuthorizationPage(BasePage):
     def authenticate(self):
         self.home_page()
         self.agree()
-        sleep(5)
-        self.sleep()
         self.find(language_button).click()
         self.find(russian_button).click()
-        sleep(5)
+
         self.agree()
         self.find(login_button).click()
 

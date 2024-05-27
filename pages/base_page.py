@@ -1,5 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 agree_button = (By.ID, 'didomi-notice-agree-button')
 
@@ -12,15 +13,20 @@ class BasePage:
         self.browser.get('https://ru.euronews.com/')
 
     def agree(self):
-        self.find(agree_button).click()
+        try:
+            self.find(agree_button).click()
+        except NoSuchElementException:
+            pass
 
     def find(self, args):
+        element = self.browser.find_element(*args)
         self.sleep()
-        return self.browser.find_element(*args)
+        return element
 
     def find_elements(self, args):
+        elements = self.browser.find_elements(*args)
         self.sleep()
-        return self.browser.find_elements(*args)
+        return elements
 
     def send_keys(self, input_field, keys):
         field = self.find(input_field)
