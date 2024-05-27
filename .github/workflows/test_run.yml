@@ -9,15 +9,15 @@ on:
         default:
         type: choice
         options:
-          - first_test
-          - second_test
-          - third_test
-          - fourth_test
-          - fifth_test
-          - sixth_test
-          - seventh_test
-          - eighth_test
-          - ninth_test
+          - test_authorization
+          - test_bulletin
+          - test_form_fill
+          - test_just_in
+          - test_live
+          - test_newsletters
+          - test_programmes
+          - test_search
+          - test_weather
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -33,30 +33,30 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: install dependencies
         run: pip install -r requirements.txt
-      - name: first_test
-        if: "github.event.inputs.deployment_target == 'first_test'"
+      - name: test_authorization
+        if: "github.event.inputs.deployment_target == 'test_authorization'"
         run: pytest tests/test_authorization.py::test_authorization
-      - name: second_test
-        if: "github.event.inputs.deployment_target == 'second_test'"
+      - name: test_bulletin
+        if: "github.event.inputs.deployment_target == 'test_bulletin'"
         run: pytest tests/test_bulletin.py::test_bulletin
-      - name: third_test
-        if: "github.event.inputs.deployment_target == 'third_test'"
+      - name: test_form_fill
+        if: "github.event.inputs.deployment_target == 'test_form_fill'"
         run: pytest tests/test_form_fill.py::test_form_fill
-      - name: fourth_test
-        if: "github.event.inputs.deployment_target == 'fourth_test'"
+      - name: test_just_in
+        if: "github.event.inputs.deployment_target == 'test_just_in'"
         run: pytest tests/test_just_in.py::test_just_in
-      - name: fifth_test
-        if: "github.event.inputs.deployment_target == 'fifth_test'"
+      - name: test_live
+        if: "github.event.inputs.deployment_target == 'test_live'"
         run: pytest tests/test_live.py::test_live
-      - name: sixth_test
-        if: "github.event.inputs.deployment_target == 'sixth_test'"
-        run: pytest tests/test_test_newsletters.py::test_newsletters
-      - name: seventh_test
-        if: "github.event.inputs.deployment_target == 'seventh_test'"
+      - name: test_newsletters
+        if: "github.event.inputs.deployment_target == 'test_newsletters'"
+        run: pytest tests/test_newsletters.py::test_newsletters
+      - name: test_programmes
+        if: "github.event.inputs.deployment_target == 'test_programmes'"
         run: pytest tests/test_programmes.py::test_programmes
-      - name: eighth_test
-        if: "github.event.inputs.deployment_target == 'eighth_test'"
+      - name: test_search
+        if: "github.event.inputs.deployment_target == 'test_search'"
         run: pytest tests/test_search.py::test_search
-      - name: ninth_test
-        if: "github.event.inputs.deployment_target == 'ninth_test'"
+      - name: test_weather
+        if: "github.event.inputs.deployment_target == 'test_weather'"
         run: pytest tests/test_weather.py::test_weather
