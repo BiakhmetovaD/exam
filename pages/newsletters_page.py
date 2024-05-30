@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 from pages.authorization_page import AuthorizationPage
 
-newsletters_button = (By.XPATH, '//span[@data-event="newsletter-link-header"]')
+newsletters_button = (By.XPATH, '//span[@class="c-link-first-level__text"]')
 choose_button = (By.XPATH, '//label[@class="block w-full btn-tertiary unchecked-label cursor-pointer"]')
 email_field = (By.XPATH, '//input[@class="w-full"]')
 continue_button = (By.XPATH, '//input[@class="btn-primary mt-6 md:mt-0 cursor-pointer block w-full md:inline-block"]')

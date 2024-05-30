@@ -9,6 +9,9 @@ class BasePage:
     def __init__(self, browser: WebDriver):
         self.browser = browser
 
+    def home_page(self):
+        self.browser.get('https://www.euronews.com/')
+
     def ru_page(self):
         self.browser.get('https://ru.euronews.com/')
 

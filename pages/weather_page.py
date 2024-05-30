@@ -12,11 +12,11 @@ my_weather_dropdown = (By.ID, 'js-show-my-weather')
 
 class WeatherPage(BasePage):
     def weather(self):
-        self.ru_page()
+        self.home_page()
         self.agree()
         self.find(weather_button).click()
         self.find(city_field).click()
-        self.send_keys(city_field, 'Нур-Султан')
+        self.send_keys(city_field, 'Nur-Sultan')
         self.find(search_button).click()
 
     def fahrenheit(self):

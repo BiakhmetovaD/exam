@@ -12,9 +12,6 @@ auth_button = (By.XPATH, '//input[@value="Войти"]')
 
 
 class AuthorizationPage(BasePage):
-    def home_page(self):
-        self.browser.get('https://www.euronews.com/')
-
     def authenticate(self):
         self.home_page()
         self.agree()
