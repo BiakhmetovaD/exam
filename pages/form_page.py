@@ -29,8 +29,8 @@ class FormPage(AuthorizationPage):
         self.set_country()
         sleep(3)
         self.find(update_button).click()
-        image = self.find((By.ID, 'gigya-profile-form'))
-        assert image.is_displayed()
+        image = self.find_elements((By.CLASS_NAME, 'gigya-toaster-success-icon'))
+        assert image
 
     def change_gender(self):
         woman = self.find(woman_button)
